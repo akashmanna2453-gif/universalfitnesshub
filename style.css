@@ -24,8 +24,8 @@
   --whatsapp-hover: #20bd5a;
   --whatsapp-glow: rgba(37, 211, 102, 0.3);
   
-  --font-heading: 'Syne', sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Poppins', 'Inter', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   
   --container-max: 1200px;
   --nav-height: 80px;
@@ -548,7 +548,7 @@ a:focus-visible, button:focus-visible {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1fr solid var(--border);
+  border: 1px solid var(--border);
 }
 
 .image-frame img {
