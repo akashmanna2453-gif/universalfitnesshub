@@ -474,7 +474,8 @@ a:focus-visible, button:focus-visible {
    -------------------------------------------------------------------------- */
 .stats-section {
   background-color: var(--surface);
-  border-y: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   padding: 3rem 0;
   margin-top: -1px;
 }
@@ -1198,11 +1199,12 @@ a:focus-visible, button:focus-visible {
   }
 
   .why-image-wrapper img, .image-frame img {
-    height: 400px;
+    height: 420px;
   }
 
   .facilities-grid, .reviews-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .footer-grid {
@@ -1212,6 +1214,31 @@ a:focus-visible, button:focus-visible {
 }
 
 @media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
+
+  .hero {
+    min-height: 90vh;
+    padding-top: calc(var(--nav-height) + 1rem);
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    max-width: 100%;
+  }
+
+  .hero-heading {
+    font-size: clamp(2.4rem, 10vw, 3.4rem);
+  }
+
+  .hero-subtext {
+    margin-bottom: 1.75rem;
+    max-width: 100%;
+  }
+
   .hamburger-btn {
     display: flex;
   }
@@ -1220,16 +1247,17 @@ a:focus-visible, button:focus-visible {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%;
-    max-width: 320px;
+    width: 100%;
+    max-width: 100%;
     height: 100vh;
     background-color: var(--surface-card);
     flex-direction: column;
     justify-content: center;
-    gap: 2.5rem;
-    padding: 2rem;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
     transition: right var(--transition-normal);
+    z-index: 1002;
   }
 
   .nav-menu.active {
@@ -1238,12 +1266,16 @@ a:focus-visible, button:focus-visible {
 
   .nav-list {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
     text-align: center;
   }
 
   .nav-link {
-    font-size: 1.125rem;
+    font-size: 1rem;
+  }
+
+  .nav-link::after {
+    display: none;
   }
 
   .nav-cta-desktop {
@@ -1257,11 +1289,15 @@ a:focus-visible, button:focus-visible {
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .facilities-grid, .reviews-grid {
     grid-template-columns: 1fr;
+  }
+
+  .reviews-grid {
+    gap: 1.25rem;
   }
 
   .footer-grid {
@@ -1273,16 +1309,66 @@ a:focus-visible, button:focus-visible {
     flex-direction: column;
   }
 
-  .hero-cta-group .btn {
+  .hero-cta-group .btn,
+  .location-buttons .btn,
+  .cta-actions .btn {
     width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    min-height: 56px;
   }
 
   .location-buttons {
     flex-direction: column;
   }
 
-  .location-buttons .btn {
+  .facility-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-grid {
+    gap: 2.5rem;
+  }
+
+  .image-frame img,
+  .why-image-wrapper img,
+  .map-placeholder {
+    height: auto;
+  }
+
+  .image-frame img {
+    min-height: 280px;
+  }
+
+  .why-image-wrapper img {
+    min-height: 360px;
+  }
+
+  .review-card {
+    padding: 1.75rem;
+  }
+
+  .overall-rating-badge {
     width: 100%;
+    max-width: 360px;
+    margin: 1.5rem auto 0;
+  }
+
+  .location-map-container {
+    min-height: 340px;
+  }
+
+  .floating-whatsapp {
+    right: 1rem;
+    bottom: 1rem;
+    width: 52px;
+    height: 52px;
+  }
+
+  .back-to-top {
+    left: 1rem;
+    bottom: 6.5rem;
   }
 
   .floating-tooltip {
@@ -1291,8 +1377,31 @@ a:focus-visible, button:focus-visible {
 }
 
 @media (max-width: 480px) {
+  .section-padding {
+    padding: 3rem 0;
+  }
+
+  .hero {
+    min-height: 82vh;
+    padding-top: calc(var(--nav-height) + 0.5rem);
+  }
+
+  .hero-content {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-heading {
+    font-size: clamp(2rem, 13vw, 2.8rem);
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .hero-trust-indicator {
@@ -1301,11 +1410,35 @@ a:focus-visible, button:focus-visible {
     gap: 0.5rem;
   }
 
-  .cta-actions {
+  .facilities-grid,
+  .reviews-grid,
+  .footer-grid {
+    gap: 1.5rem;
+  }
+
+  .cta-actions,
+  .location-buttons,
+  .hero-cta-group {
     flex-direction: column;
   }
 
-  .cta-actions .btn {
-    width: 100%;
+  .nav-menu {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.96rem;
+  }
+
+  .nav-cta-mobile {
+    font-size: 0.95rem;
+  }
+
+  .map-placeholder {
+    min-height: 260px;
+  }
+
+  .footer {
+    padding: 4rem 0 2rem;
   }
 }
